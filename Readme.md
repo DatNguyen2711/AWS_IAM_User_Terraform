@@ -1,4 +1,4 @@
-### Create IAM User with Terraform
+#### Create IAM User with Terraform
 
 ![image](https://github.com/DatNguyen2711/AWS_IAM_User_Terraform/assets/81822483/6d4de583-4b8a-4704-9988-0f5d87f996bc)
 
