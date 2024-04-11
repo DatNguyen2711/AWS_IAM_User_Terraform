@@ -1,6 +1,6 @@
-variable "username" {
-  type    = string
-  default = "example"
+variable "usernames" {
+  type    = list(string)
+  default = ["datlaid", "trung nb", "kiennv", "toankt"]
 }
 
 

@@ -4,7 +4,7 @@
 
 ## Step 1: Paste your key into terraform.tfvars file
 
-_You have to create a iam with policies "AdministratorAccess" to create access key_
+_You have to create a iam user before with policies "AdministratorAccess" to create access key_
 
 ```bash
 
