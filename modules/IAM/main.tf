@@ -73,7 +73,22 @@ resource "aws_iam_user_policy" "ec2_policy" {
         "Action" : "cur:DescribeReportDefinitions",
         "Effect" : "Allow",
         "Resource" : "*"
-      }
+      },
+      {
+        "Sid" : "AllowAWSServiceAccessForCostOptimizationHub",
+        "Effect" : "Allow",
+        "Action" : [
+          "organizations:EnableAWSServiceAccess"
+        ],
+        "Resource" : "*",
+        "Condition" : {
+          "StringLike" : {
+            "organizations:ServicePrincipal" : [
+              "cost-optimization-hub.bcm.amazonaws.com"
+            ]
+          }
+        }
+      },
     ]
   })
 
