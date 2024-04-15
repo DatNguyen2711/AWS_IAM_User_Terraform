@@ -1,0 +1,66 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": ["ec2:*", "iam:ChangePassword"],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "aws-portal:ViewBilling",
+        "aws-portal:ViewPaymentMethods",
+        "aws-portal:ViewUsage",
+        "aws-portal:ViewAccount",
+        "ce:*",
+        "aws-portal:ViewCosts"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": ["organizations:DescribeOrganization"],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "s3:GetBucketTagging",
+        "s3:PutBucketTagging",
+        "s3:GetBucketPolicy",
+        "s3:PutBucketPolicy",
+        "s3:ListBucket",
+        "s3:CreateBucket"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::aws-map-cur-bucket-*"
+    },
+    {
+      "Action": [
+        "cur:PutReportDefinition",
+        "cur:DeleteReportDefinition",
+        "cur:DescribeReportDefinitions"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:cur:*:*:definition/map-migrated-report"
+    },
+    {
+      "Action": "cur:DescribeReportDefinitions",
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowAWSServiceAccessForCostOptimizationHub",
+      "Effect": "Allow",
+      "Action": ["organizations:EnableAWSServiceAccess"],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "organizations:ServicePrincipal": [
+            "cost-optimization-hub.bcm.amazonaws.com"
+          ]
+        }
+      }
+    }
+  ]
+}
