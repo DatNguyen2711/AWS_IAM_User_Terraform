@@ -2,18 +2,7 @@
 
 ![image](https://github.com/DatNguyen2711/AWS_IAM_User_Terraform/assets/81822483/6d4de583-4b8a-4704-9988-0f5d87f996bc)
 
-## Step 1: Paste your key into terraform.tfvars file
-
-_You have to create a iam user before with policies "AdministratorAccess" to create access key_
-
-```bash
-
-access_key  = "your access key here"
-secret_key  = "your secret key here"
-
-```
-
-## Step 2: Run this command to create and attach policies for IAM User
+## Run this command to create and attach policies for IAM User
 
 ```bash
 
